@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+div{
+    height: 280px;
+    width : 653px;
+    background-color: blue;
+}
+table,th,td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+</style>
+
+<div>
+    <table style="width:100%", id ="Tabel">
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Nilai</th>
+            <th>Mutu</th>
+        </tr>
+
+        <script>
+            var nama = ["Boy","Aldi","Ade","Randy","Andi","Adi","Rapli","Dodi","Eko","Beni"];
+            var nim = ["123","124","125","126","127","128","129","130","131","132"];
+            var nilai = ["60","70","40","90","60","60","80","75","65","45"];
+            var table = '';
+            var mutu = [];
+            for(var j = 0; j<10; j++){
+                var n = nilai[j];
+                    if(n >= 80){
+                        mutu.push("A");
+                    }
+                   	else if(n >= 70 && n<80){
+                        mutu.push("AB");
+                    }
+                    else if(n >= 60 && n<70){
+                        mutu.push("B");
+                    }
+                    else if(n >= 50 && n<60){
+                        mutu.push("BC");
+                    }
+                    else if(n >= 40 && n<50){
+                        mutu.push("C");
+                    }
+                    else if(n >= 10 && n<40){
+                        mutu.push("D");
+                    }
+                    else if(n < 10){
+                        mutu.push("E");
+                    }
+                }
+	        for(var i = 1; i <= 10; i++){
+		            table +='<tr>';
+                            table +='<td>' + i + '</td>';
+				            table +='<td>' + nama[i-1] + '</td>';
+                            table +='<td>' + nim[i-1] + '</td>';
+                            table +='<td>' + nilai[i-1] + '</td>';
+                            table +='<td>' + mutu[i-1] + '</td>';
+		            table +='</tr>';
+	            }
+	            document.write(table);
+        </script>
+        
+       
+
+    </table>    
+</div>
+</body>
+</html>
